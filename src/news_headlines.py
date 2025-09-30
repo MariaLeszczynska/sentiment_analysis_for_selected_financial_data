@@ -24,7 +24,7 @@ def preprocess_news(csv_path: Path) -> Path:
     renames columns to ['Date', 'Headline],
     restricts the time period
     and saves the result as <NEWSPAPER>_preprocessed.csv
-    in the given output directory.
+    in the output directory
     """
 
     newspaper = csv_path.stem.split("_")[0]
@@ -50,22 +50,20 @@ def preprocess_news(csv_path: Path) -> Path:
     return out_path
 
 
-
 def clean_headlines(series: pd.Series) -> pd.Series:
     """
-    Cleans a pandas Series of news headlines,
+    Cleans our news headlines:
     converts values to string type,
     applies Unicode normalization (NFKC),
     removes zero-width/invisible characters,
-    collapses all whitespace (spaces, tabs, newlines) into a single space,
+    collapses all whitespace into a single space,
     strips leading and trailing spaces,
-    and returns the cleaned Series ready for FinBERT.
+    and returns the cleaned series
     """
     
     return (series.astype(str)
-        .str.normalize("NFKC")                         # keep Unicode, normalize look-alikes
-        .str.replace(r"[\u200B-\u200D\u2060\uFEFF]", "", regex=True)  # zero widths
-        .str.replace(r"\s+", " ", regex=True)          # collapse spaces/tabs/newlines
+        .str.normalize("NFKC")
+        .str.replace(r"[\u200B-\u200D\u2060\uFEFF]", "", regex=True)
+        .str.replace(r"\s+", " ", regex=True)
         .str.strip()
     )
-
