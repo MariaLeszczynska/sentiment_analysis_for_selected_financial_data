@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 RAW_DIR = Path("../data/raw")
-OUT_DIR = Path("../data/preprocessed")
+OUT_DIR = Path("../data/preprocessed/etfs")
 OUT_DIR.mkdir(parents=True, exist_ok=True) # to make sure the output folder exists
 
 def preprocess_file(csv_path: Path) -> Path:

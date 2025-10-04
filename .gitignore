@@ -1,0 +1,10 @@
+__pycache__/
+*/__pycache__/
+*.py[cod]
+
+data/preprocessed/*
+images/*
+
+# but keep the folders
+!data/preprocessed/.gitkeep
+!images/.gitkeep

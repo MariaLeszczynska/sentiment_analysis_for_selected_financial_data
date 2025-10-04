@@ -1,0 +1,51 @@
+sector_keywords = {
+    "XLE": ["xle", "energy select sector spdr", "energy etf", "exxon", "exxonmobil", "xom", "chevron", "cvx", "conocophillips", "cop", 
+            "eog resources", "eog", "schlumberger", "slb", "phillips 66", "psx", "marathon petroleum", "mpc", "valero", "vlo", "williams companies",
+            "wmb", "kinder morgan", "kmi", "hess", "hes", "halliburton", "hal", "oil", "crude", "crude oil", "gas", "natural gas", "petroleum", "brent",
+            "wti", "fossil fuel", "drilling", "refinery", "refining", "exploration", "production", "rig", "pipeline", "opec", "energy prices",
+            "energy demand", "energy stocks", "oil prices", "oil supply", "energy sector", "commodity rally", "fuel costs", "barrel",
+            "geopolitical tension", "energy crisis", "fossil fuels", "energy companies", "upstream", "downstream"],
+
+    "XLF": ["xlf", "financial select sector spdr", "financial etf", "jpmorgan", "jpm", "bank of america", "bac", "wells fargo", "wfc", "goldman sachs",
+            "gs", "morgan stanley", "ms", "s&p global", "spgi", "blackrock", "blk", "american express", "axp", "citigroup", "c", "charles schwab",
+            "schw", "chubb", "cb", "progressive", "pgr", "cme group", "cme", "travelers", "trv", "bank", "banks", "banking", "investment bank",
+            "commercial bank", "lending", "loans", "credit", "debt", "mortgage", "refinancing", "interest rate", "rates", "yield curve",
+            "bond market", "treasury", "securities", "brokerage", "financial services", "insurance", "asset management", "wealth management",
+            "hedge fund", "private equity", "fintech", "payment processing", "credit card", "consumer finance", "financial sector", "financial stability",
+            "federal reserve", "fed policy", "rate hike", "monetary policy", "tightening cycle", "capital markets", "liquidity", "financial crisis",
+            "earnings season", "loan demand", "deposit outflows", "regulation", "stress test", "bank profits", "credit conditions"],
+
+
+    "XLK": ["xlk", "technology select sector spdr", "technology etf", "tech etf", "apple", "aapl", "microsoft", "msft", "nvidia", "nvda", "broadcom",
+            "avgo", "oracle", "orcl", "adobe", "adbe", "salesforce", "crm", "cisco", "csco", "intel", "intc", "amd", "advanced micro devices",
+            "texas instruments", "txn", "qualcomm", "qcom", "ibm", "intuit", "meta", "google", "alphabet", "amzn", "tech", "technology", "software",
+            "hardware", "semiconductor", "semiconductors", "chip", "chips", "ai", "artificial intelligence", "machine learning", "data center", "cloud",
+            "cloud computing", "cybersecurity", "saas", "it services", "computing", "microchip", "processor", "gpu", "cpu", "digital transformation",
+            "5g", "iot", "blockchain", "automation", "robotics", "innovation", "startups", "tech sector", "technology stocks", "earnings growth",
+            "digital economy", "software spending", "cloud adoption", "ai boom", "tech rally", "valuation multiples", "tech innovation", "it infrastructure",
+            "big tech", "faang", "nasdaq", "nasdaq 100"],
+
+
+    "XLV": ["xlv", "health care select sector spdr", "healthcare etf", "health care etf", "unitedhealth", "unh", "johnson & johnson", "jnj", "eli lilly",
+            "lly", "pfizer", "pfe", "abbvie", "abbv", "merck", "mrk", "thermo fisher", "tmo", "abbott laboratories", "abt", "danaher", "dhr",
+            "bristol myers", "bmy", "amgen", "amgn", "gilead", "gild", "cvs health", "cvs", "elevance health", "elv", "medtronic", "mdt",
+            "intuitive surgical", "isrg", "regeneron", "regn", "boston scientific", "bsx", "stryker", "syk", "healthcare", "health care", "biotech",
+            "biotechnology", "pharma", "pharmaceutical", "drug", "medication", "therapy", "vaccine", "diagnostic", "medical device", "hospital",
+            "clinical trial", "fda approval", "treatment", "patients", "health insurance", "managed care", "medicare", "medicaid",
+            "medical research", "life sciences", "genomics", "biosimilar", "drugmaker", "pharmaceutical company", "healthcare sector", 
+            "pharma industry", "drug pricing", "fda decision", "patent expiration", "clinical data", "vaccine rollout", "public health",
+            "health spending", "pandemic", "epidemic", "disease outbreak", "health innovation", "biotech rally", "medical technology",
+            "healthcare stocks", "pharma pipeline", "treatment approval"],
+
+
+    "XLY": ["xly", "consumer discretionary select sector spdr", "consumer discretionary etf", "amazon", "amzn", "tesla", "tsla", "home depot", "hd",
+            "mcdonald's", "mcd", "lowe's", "low", "nike", "nke", "starbucks", "sbux", "costco", "cost", "booking holdings", "bkng", "target",
+            "tgt", "tjx", "tjx companies", "chipotle", "cmg", "marriott", "mar", "yum brands", "yum", "autozone", "azo", "gap", "gps",
+            "ultra beauty", "ulta", "lyft", "uber", "consumer discretionary", "retail", "retailer", "e-commerce", "shopping", "consumer demand",
+            "consumer spending", "household spending", "luxury goods", "automotive", "car sales", "vehicle demand", "travel", "hospitality",
+            "restaurants", "fast food", "apparel", "fashion", "footwear", "electronics", "home improvement", "furniture",
+            "leisure", "entertainment", "recreation", "tourism", "online retail", "digital sales", "shopping season", "holiday sales", "black friday",
+            "cyber monday", "consumer confidence", "disposable income", "inflation impact", "interest rates", "wage growth", "job market",
+            "reopening trade", "consumer trends", "retail spending", "sales data", "supply chain", "inventory levels", "demand recovery",
+            "brand performance", "store closures", "pricing power", "customer demand", "product launches", "consumer behavior"]
+}

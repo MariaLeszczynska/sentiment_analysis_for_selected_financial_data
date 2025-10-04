@@ -12,7 +12,7 @@ START = pd.Timestamp("2018-03-20")
 END = pd.Timestamp("2020-07-17")
 
 RAW_DIR = Path("../data/raw")
-OUT_DIR = Path("../data/preprocessed")
+OUT_DIR = Path("../data/preprocessed/headlines")
 OUT_DIR.mkdir(parents=True, exist_ok=True) # to make sure the output folder exists
 
 
@@ -22,6 +22,7 @@ def preprocess_news(csv_path: Path) -> Path:
     parses 'Time' into datetime,
     drops 'Description' column if it exists,
     renames columns to ['Date', 'Headline],
+    adds a 'Newspaper' column,
     restricts the time period
     and saves the result as <NEWSPAPER>_preprocessed.csv
     in the output directory
@@ -35,7 +36,6 @@ def preprocess_news(csv_path: Path) -> Path:
     time_fix = data["Time"]
     time_fix = time_fix.replace(r"\bET\b", "", regex=True) # remove "ET"
     time_fix = time_fix.replace(r"(?i)\bMon|Tue|Wed|Thu|Fri|Sat|Sun\b,?", "", regex=True)
-    #time_fix = time_fix.replace(r"\s+", " ", regex=True).strip()
 
     data["Date"] = pd.to_datetime(time_fix, errors="coerce", dayfirst=True, format="mixed").dt.normalize() # we have to drop the hour from one of the files
     data = data.sort_values("Date")
@@ -43,6 +43,9 @@ def preprocess_news(csv_path: Path) -> Path:
 
     # keeping only the two main columns, dropping "Time" and "Description" if it exists
     data = data[["Date", "Headlines"]]
+
+    # adding the newspaper name so when all news are merged, we know the source
+    data["Newspaper"] = newspaper 
 
     out_path = OUT_DIR / f"{newspaper}_preprocessed.csv"
     data.to_csv(out_path, index=False)
@@ -57,13 +60,16 @@ def clean_headlines(series: pd.Series) -> pd.Series:
     applies Unicode normalization (NFKC),
     removes zero-width/invisible characters,
     collapses all whitespace into a single space,
+    removes 'Cramer',
     strips leading and trailing spaces,
     and returns the cleaned series
     """
     
-    return (series.astype(str)
+    return (
+        series.astype(str)
         .str.normalize("NFKC")
         .str.replace(r"[\u200B-\u200D\u2060\uFEFF]", "", regex=True)
         .str.replace(r"\s+", " ", regex=True)
+        .str.replace(r"\bCramer(?:'s)?\b", "", regex=True)
         .str.strip()
     )
