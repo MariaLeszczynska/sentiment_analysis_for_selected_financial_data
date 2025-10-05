@@ -60,7 +60,6 @@ def clean_headlines(series: pd.Series) -> pd.Series:
     applies Unicode normalization (NFKC),
     removes zero-width/invisible characters,
     collapses all whitespace into a single space,
-    removes 'Cramer',
     strips leading and trailing spaces,
     and returns the cleaned series
     """
@@ -68,8 +67,7 @@ def clean_headlines(series: pd.Series) -> pd.Series:
     return (
         series.astype(str)
         .str.normalize("NFKC")
-        .str.replace(r"[\u200B-\u200D\u2060\uFEFF]", "", regex=True)
+        .str.replace(r"[\u200B-\u200D\u2060\uFEFF\u00A0]", "", regex=True)
         .str.replace(r"\s+", " ", regex=True)
-        .str.replace(r"\bCramer(?:'s)?\b", "", regex=True)
         .str.strip()
     )
