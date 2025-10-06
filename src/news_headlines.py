@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 import re
+from sector_keywords import sector_keywords
 
 
 RAW_DIR = Path("../data/raw")
@@ -71,3 +72,31 @@ def clean_headlines(series: pd.Series) -> pd.Series:
         .str.replace(r"\s+", " ", regex=True)
         .str.strip()
     )
+
+
+def _news_category_finder(keywords_dict):
+    """ 
+    Compiles regex patterns for all sector keywords
+    """
+    patterns = {}
+
+    for sector, terms in keywords_dict.items():
+        escaped = [re.escape(text) for text in terms if text and isinstance(text, str)]
+        pattern_str = r"(?:\b" + r"\b|\b".join(escaped) + r"\b)"
+        patterns[sector] = re.compile(pattern_str, flags=re.IGNORECASE)
+    
+    return patterns
+
+_PATTERNS = _news_category_finder(sector_keywords)
+
+
+def flag_sectors(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Add binary flags (0/1) for each ETF sector
+    if its keywords appear in the headline
+    """
+
+    for sector, pattern in _PATTERNS.items():
+        df[sector] = df["Headlines"].str.contains(pattern, na=False).astype(int)
+    
+    return df

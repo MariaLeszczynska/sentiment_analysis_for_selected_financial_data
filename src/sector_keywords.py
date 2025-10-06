@@ -35,7 +35,12 @@ sector_keywords = {
             "medical research", "life sciences", "genomics", "biosimilar", "drugmaker", "pharmaceutical company", "healthcare sector", 
             "pharma industry", "drug pricing", "fda decision", "patent expiration", "clinical data", "vaccine rollout", "public health",
             "health spending", "pandemic", "epidemic", "disease outbreak", "health innovation", "biotech rally", "medical technology",
-            "healthcare stocks", "pharma pipeline", "treatment approval"],
+            "healthcare stocks", "pharma pipeline", "treatment approval", "cancer", "oncology", "tumor", "leukemia", "immunotherapy",
+            "chemotherapy", "diabetes", "obesity", "alzheimer", "alzheimers", "cardiovascular", "heart disease", "stroke", "mental health",
+            "depression", "anxiety", "rare disease", "genetic disorder", "infectious disease", "virus", "viral", "covid-19", "coronavirus",
+            "epidemic response", "pandemic response", "public health agency", "drug approval", "regulatory approval", "clinical results",
+            "trial results", "medical breakthrough", "fda panel", "drug launch", "drug sales", "healthcare spending", "drug shortage",
+            "pharma merger", "biotech acquisition", "clinical pipeline", "healthcare reform", "insurance premiums", "healthcare policy"],
 
 
     "XLY": ["xly", "consumer discretionary select sector spdr", "consumer discretionary etf", "amazon", "amzn", "tesla", "tsla", "home depot", "hd",
